@@ -1,5 +1,4 @@
 import {  createSlice, nanoid } from '@reduxjs/toolkit'
-import type { RootState } from '../store'
 
 export interface MainState {
     notes:[
@@ -33,7 +32,6 @@ export const noteSlice = createSlice({
 })
 
 
-export const selectCount = (state: RootState) => state.main.value
 export const {addNote} = noteSlice.actions
 
 export default noteSlice.reducer

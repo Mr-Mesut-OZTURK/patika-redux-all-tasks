@@ -1,4 +1,3 @@
-import React from 'react'
 
 const Covid19Tracker = () => {
     return (

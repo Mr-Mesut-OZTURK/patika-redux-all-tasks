@@ -1,5 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
-import React, { FC, ReactElement } from 'react'
+import { ReactElement } from 'react'
 import BillGates from './bill-gates/BillGates'
 import Covid19Tracker from './covid19-tracker/Covid19Tracker'
 import FindCard from './find-card/FindCard'
