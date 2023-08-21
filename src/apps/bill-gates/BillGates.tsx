@@ -135,7 +135,7 @@ const BillGates = () => {
 
                                             variant='contained'
                                             disabled={
-                                                productList?.find(item => item.id === product.id)?.count === 0
+                                                chart?.filter(item => item?.product.id === product.id)[0]?.count >= 10
                                                 ||
                                                 (
                                                     (productList?.filter(item => item.id === product.id)[0]?.price > totalMoney)
