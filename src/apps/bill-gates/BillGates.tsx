@@ -1,15 +1,18 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { useEffect } from 'react'
-import { Box, Button, Card, CardContent, Chip, Grid, ListItemText, Stack, Typography } from '@mui/material'
+import { Box, Button, Card, CardContent, Chip, Grid, IconButton, ListItemText, Stack, Typography } from '@mui/material'
 
 import { useAppDispatch, useAppSelector } from 'src/redux/hooks'
 import { addToChart, removeFromChart, setProductList } from 'src/redux/slices/billGatesSlice'
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { useNavigate } from 'react-router-dom';
 
 
 
 const BillGates = () => {
 
     const dispatch = useAppDispatch()
+    const navigate = useNavigate()
     const { totalMoney, productList, chart } = useAppSelector(state => state?.billGates)
 
 
@@ -21,7 +24,21 @@ const BillGates = () => {
 
     console.log({ totalMoney })
     return (
-        <Box>
+        <Box sx={{ position: 'relative' }}>
+
+
+            <IconButton
+                onClick={() => navigate("/tasks")}
+                sx={{
+                    fontSize: 16,
+                    color: '#000',
+                    position: 'absolute',
+                    left: 0,
+                    top: 0
+                }}
+            >
+                <ArrowBackIcon sx={{ fontSize: 22 }} /> Back
+            </IconButton>
 
             {/* ################ header ################ */}
             <Stack
