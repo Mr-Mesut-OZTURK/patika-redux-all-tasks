@@ -1,24 +1,24 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 export interface Covid19TrackerState {
-    value: number
+    covid19Country: number
 }
 
 const initialState: Covid19TrackerState = {
-    value: 0
+    covid19Country: 0
 }
 
 export const covid19TrackerSlice = createSlice({
     name: 'covid19Tracker',
     initialState,
     reducers: {
-        setValue: (state, action) => {
-            console.log({state, action})
+        setCovid19Country: (state, action) => {
+            state.covid19Country = action.payload
         }
     }
 })
 
 
-export const { setValue} = covid19TrackerSlice.actions
+export const { setCovid19Country } = covid19TrackerSlice.actions
 
 export default covid19TrackerSlice.reducer
