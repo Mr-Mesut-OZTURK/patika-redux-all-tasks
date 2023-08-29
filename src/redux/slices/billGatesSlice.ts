@@ -31,9 +31,9 @@ export interface BillGatesType {
         }
     ],
 }
-console.log(JSON.parse(
-    sessionStorage.getItem("billGates") ?? '{"totalMoney":10000}'
-    ))
+// console.log(JSON.parse(
+//     sessionStorage.getItem("billGates") ?? '{"totalMoney":10000}'
+//     ))
 
 const initialState: BillGatesType = {
     totalMoney: Number(JSON.parse(sessionStorage.getItem("billGates") || '{"totalMoney":10000}')?.totalMoney) ?? 10000,

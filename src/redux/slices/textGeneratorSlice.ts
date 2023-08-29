@@ -2,24 +2,34 @@ import { createSlice } from '@reduxjs/toolkit'
 
 
 export interface TextGeneratorState {
-    value: number
+    paragrahhsCount: number,
+    isHtml:number,
+    paragraphs:string,
 }
 
 const initialState: TextGeneratorState = {
-    value: 0
+    paragrahhsCount: 1,
+    isHtml:0,
+    paragraphs:""
 }
 
 export const textGeneratorSlice = createSlice({
     name: 'textGenerator',
     initialState,
     reducers: {
-        setValue: (state, action) => {
-            console.log({state, action})
+        setParagraphsCount: (state, action) => {
+            state.paragrahhsCount = action.payload
+        },
+        setIsHtml: (state, action) => {
+            state.isHtml = action.payload
+        },
+        setParagraphs:(state,actions)=>{
+            state.paragraphs = actions.payload
         }
     }
 })
 
 
-export const { setValue} = textGeneratorSlice.actions
+export const { setParagraphsCount, setIsHtml, setParagraphs } = textGeneratorSlice.actions
 
 export default textGeneratorSlice.reducer

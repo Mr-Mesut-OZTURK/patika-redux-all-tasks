@@ -89,7 +89,7 @@ function MainNavbar({ routes, ...props }: MainNavbar) {
       <Box
         component={RouterLink}
         sx={{
-          width: { xs: '10px', sm: '30px' },
+          width: { xs: '30px', sm: '30px' },
           ...sx
         }}
       >
