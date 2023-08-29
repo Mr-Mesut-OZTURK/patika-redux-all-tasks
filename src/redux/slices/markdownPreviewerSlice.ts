@@ -1,24 +1,24 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 export interface MarkdownPreviewerState {
-    value: number
+    text: string
 }
 
 const initialState: MarkdownPreviewerState = {
-    value: 0
+    text: ""
 }
 
 export const markdownPreviewerSlice = createSlice({
     name: 'markdownPreviewer',
     initialState,
     reducers: {
-        setValue: (state, action) => {
-            console.log({state, action})
+        setText: (state, action) => {
+            state.text = action.payload
         }
     }
 })
 
 
-export const { setValue} = markdownPreviewerSlice.actions
+export const { setText } = markdownPreviewerSlice.actions
 
 export default markdownPreviewerSlice.reducer
